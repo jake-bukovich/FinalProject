@@ -1,10 +1,5 @@
-/***********************
-  Load Components!
 
-  Express      - A Node.js Framework
-  Body-Parser  - A tool to help use parse the data in a post request
-  Pg-Promise   - A database tool to help use connect to our PostgreSQL database
-***********************/
+
 
 var express = require('express'); //Ensure our express framework has been added
 var app = express();
@@ -14,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 //Create Database Connection
 var pgp = require('pg-promise')();
-
+var app = express();
 /**********************
   Database Connection information
   host: This defines the ip address of the server hosting our database.  We'll be using localhost and run our database on our local machine (i.e. can't be access via the Internet)
