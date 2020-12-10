@@ -62,12 +62,14 @@ app.get('/main', function(req,res){
     .catch(function(err){
       request.flash('error', err);
       response.render('pages/main', {
-        title: 'Home Page',
-        data: '',
-        color: '',
-        color_msg: ''
+        my_title: 'Main Page',
+        data: rows,
+        name: '',
+        country: '',
+        web_page: ''
 
     })
+  })
 
 });
 
