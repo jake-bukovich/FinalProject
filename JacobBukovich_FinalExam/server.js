@@ -13,7 +13,7 @@ var app = express();
 
 
 
-/*let dbConfig = {
+let dbConfig = {
   host: 'localhost',
   port: 5432,
   database: 'search',
@@ -23,7 +23,7 @@ var app = express();
 
 const isProduction = process.env.NODE_ENV === 'production';
 dbConfig = isProduction ? process.env.DATABASE_URL : dbConfig;
-let db = pgp(dbConfig);*/
+let db = pgp(dbConfig);
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));
 
@@ -52,7 +52,7 @@ app.get('/main', function(req,res){
 
 });
 
-app.listen(3000);
+//app.listen(3000);
 
 const PORT = process.env.PORT || 8080;
 
@@ -60,7 +60,7 @@ const server = app.listen(PORT, () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
 
-module.exports = app;
+
 
 
 
