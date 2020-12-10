@@ -13,7 +13,7 @@ var app = express();
 
 
 
-let dbConfig = {
+/*let dbConfig = {
   host: 'localhost',
   port: 5432,
   database: 'search',
@@ -23,7 +23,7 @@ let dbConfig = {
 
 const isProduction = process.env.NODE_ENV === 'production';
 dbConfig = isProduction ? process.env.DATABASE_URL : dbConfig;
-let db = pgp(dbConfig);
+let db = pgp(dbConfig);*/
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/'));
 
