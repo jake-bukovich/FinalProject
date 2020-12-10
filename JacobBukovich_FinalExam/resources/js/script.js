@@ -1,6 +1,33 @@
 
 
-function fetchSearch(){
+
+$(function () {
+    $("form[role='search']").submit(function (event) {
+        event.preventDefault();
+        var s = $("input[type='text']", this).val;
+
+        var url = "http://universities.hipolabs.com/search?name=" + s;
+        $.ajax({ url: url, dataType: "jsonp" }).then(function (data) {
+            console.log(data);
+            var search = data.completedSearch[0].result[0].search;
+            var ser = "<div class='row'>";
+            for (var i = 0; i < search.length; i++) {
+                ser += "<div class='column>";
+                ser += "<div class='card'>";
+                ser += "<h2>" + search[i].name + "</h2>";
+                ser += "<p>" + search[i].country + "</p>";
+                ser += "<a href= '" + search[i].webpage + "' class = 'button web-button'>University Website</a>";
+                ser += "</div></div>";
+
+
+            };
+            $('.results').html(ser);
+        });
+
+    });
+});
+
+/*function fetchSearch(){
     var script=document.createElement('script');
     script.src = "http://universities.hipolabs.com/search?name="+document.getElementsByName("search");
 
@@ -9,7 +36,7 @@ function fetchSearch(){
 function createCards(data){
 
 
-}
+}*/
 
 
 /*$(document).ready(function () {

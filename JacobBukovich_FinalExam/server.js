@@ -38,9 +38,26 @@ let db = pgp(dbConfig);
 
 app.get('/', function (req, res) {
   res.render('pages/main', {
-    local_css: "style.css",
     my_title: "Main Page"
   });
+});
+
+app.get('/main', function(req,res){
+  var query="select * from search;";
+  db.any(query)
+    .then(function(rows){
+      res.render('pages/main',{
+        my_title:'Main Page',
+        data: rows,
+        name:'',
+        country:'',
+        web_page:''
+
+
+      })
+
+    })
+
 });
 
 app.listen(3000);
