@@ -67,6 +67,8 @@ const server = app.listen(PORT, () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
 
+module.exports = app;
+
 
 
 
