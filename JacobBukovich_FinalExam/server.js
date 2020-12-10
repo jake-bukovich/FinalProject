@@ -27,7 +27,7 @@ var pgp = require('pg-promise')();
 let dbConfig = {
   host: 'localhost',
   port: 5432,
-  database: 'review',
+  database: 'search',
   user: 'postgres',
   password: 'pwd'
 };
@@ -35,6 +35,9 @@ let dbConfig = {
 const isProduction = process.env.NODE_ENV === 'production';
 dbConfig = isProduction ? process.env.DATABASE_URL : dbConfig;
 let db = pgp(dbConfig);
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/'));
+
 
 app.get('/', function (req, res) {
   res.render('pages/main', {
