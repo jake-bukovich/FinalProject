@@ -6,7 +6,7 @@
         event.preventDefault();
         var s = $("input[type='text']", this).val;
 
-        var url =new URL( "http://universities.hipolabs.com/search?name=" + s);
+        var url =new URL( "https://universities.hipolabs.com/search?name=" + s);
         $.ajax({ url: url, dataType: "jsonp" }).then(function (data) {
             console.log(data);
             var search = data.completedSearch[0].result[0].search;
