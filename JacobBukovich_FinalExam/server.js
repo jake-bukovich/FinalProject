@@ -1,23 +1,31 @@
 
 
+var express = require('express');
+var router = express.Router();
+var passport = require('passport');
+var Strategy = require('passport-local').Strategy;
 
-var express = require('express'); //Ensure our express framework has been added
+/* GET home page. */
+router.get('/', passport.authenticate('local', { failureRedirect: '/signin' }),
+  function (req, res, next) {
+    // for res.SendFile() specifying the root is required for an absolute path
+    // if the html or file needing to be served is in the same directory (i.e. routes for this)
+    // you can use (__dirname + 'file_name.html');
+    // also can use res.send() or render() for html
+    res.redirect('/studentDashboard')
+  });
+
+module.exports = router;
+/*var express = require('express'); 
 var app = express();
-var bodyParser = require('body-parser'); //Ensure our body-parser tool has been added
-app.use(bodyParser.json());              // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());             
+app.use(bodyParser.urlencoded({ extended: true })); 
 
-//Create Database Connection
+
 var pgp = require('pg-promise')();
 var app = express();
-/**********************
-  Database Connection information
-  host: This defines the ip address of the server hosting our database.  We'll be using localhost and run our database on our local machine (i.e. can't be access via the Internet)
-  port: This defines what port we can expect to communicate to our database.  We'll use 5432 to talk with PostgreSQL
-  database: This is the name of our specific database.  From our previous lab, we created the football_db database, which holds our football data tables
-  user: This should be left as postgres, the default user account created when PostgreSQL was installed
-  password: This the password for accessing the database.  You'll need to set a password USING THE PSQL TERMINAL THIS IS NOT A PASSWORD FOR POSTGRES USER ACCOUNT IN LINUX!
-**********************/
+
 
 
 let dbConfig = {
@@ -71,7 +79,7 @@ module.exports = app;
 
 
 
-
+*/
 
 
 
