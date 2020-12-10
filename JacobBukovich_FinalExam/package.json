@@ -1,6 +1,17 @@
 {
-    "name": "node-ejs",
+    "name": "final",
     "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "engines": {
+        "node": "= 4.5.0",
+        "npm": "= 3.9.6"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jake-bukovich/FinalProject.git"
+    },
     "dependencies": {
         "ejs": "^2.5.5",
         "ejs-lint": "^0.3.0",
