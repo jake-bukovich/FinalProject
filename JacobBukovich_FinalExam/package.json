@@ -4,7 +4,6 @@
     "scripts": {
         "start": "node server.js"
     },
-
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jake-bukovich/FinalProject.git"
