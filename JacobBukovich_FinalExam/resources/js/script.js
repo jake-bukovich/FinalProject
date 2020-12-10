@@ -1,7 +1,7 @@
 
 
 
-$(window).load(function () {
+
     $("form[role='search']").submit(function (event) {
         event.preventDefault();
         var s = $("input[type='text']", this).val;
@@ -25,7 +25,7 @@ $(window).load(function () {
         });
 
     });
-});
+
 
 /*function fetchSearch(){
     var script=document.createElement('script');
