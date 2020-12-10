@@ -66,8 +66,10 @@ app.get('/main', function(req,res){
 
 //app.listen(3000);
 
-var server = app.listen(5000, function () {
-  console.log('Server is running...');
+const PORT = process.env.PORT || 8080;
+
+const server = app.listen(PORT, () => {
+  console.log(`Express running → PORT ${server.address().port}`);
 });
 
 
