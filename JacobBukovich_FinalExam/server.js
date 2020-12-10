@@ -36,7 +36,22 @@ const isProduction = process.env.NODE_ENV === 'production';
 dbConfig = isProduction ? process.env.DATABASE_URL : dbConfig;
 let db = pgp(dbConfig);
 
-$(function () {
+
+app.listen(3000);
+
+const PORT = process.env.PORT || 8080;
+
+const server = app.listen(PORT, () => {
+  console.log(`Express running → PORT ${server.address().port}`);
+});
+
+
+
+
+
+
+
+/*$(function () {
   $("form[role='search']").submit(function (event) {
     event.preventDefault();
     var s = $("input[type='text']", this).val;
@@ -61,12 +76,4 @@ $(function () {
 
   });
 });
-
-
-app.listen(3000);
-
-const PORT = process.env.PORT || 8080;
-
-const server = app.listen(PORT, () => {
-  console.log(`Express running → PORT ${server.address().port}`);
-});
+*/
