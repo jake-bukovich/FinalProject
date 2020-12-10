@@ -36,6 +36,12 @@ const isProduction = process.env.NODE_ENV === 'production';
 dbConfig = isProduction ? process.env.DATABASE_URL : dbConfig;
 let db = pgp(dbConfig);
 
+app.get('/', function (req, res) {
+  res.render('pages/main', {
+    local_css: "style.css",
+    my_title: "Main Page"
+  });
+});
 
 app.listen(3000);
 
