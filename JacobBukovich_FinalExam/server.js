@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/main', function(req,res){
-  var query="select * from search;";
+  var query="select * from reviews;";
   db.any(query)
     .then(function(rows){
       res.render('pages/main',{
@@ -57,6 +57,15 @@ app.get('/main', function(req,res){
 
 
       })
+
+    })
+    .catch(function(err){
+      request.flash('error', err);
+      response.render('pages/main', {
+        title: 'Home Page',
+        data: '',
+        color: '',
+        color_msg: ''
 
     })
 

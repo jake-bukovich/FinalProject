@@ -2,7 +2,7 @@
     "name": "final",
     "main": "server.js",
     "scripts": {
-        "start": "node script.js"
+        "start": "node server.js"
     },
     "mssql.logDebugInfo": true,
     "repository": {
