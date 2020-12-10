@@ -1,22 +1,7 @@
 
 
-var express = require('express');
-var router = express.Router();
-var passport = require('passport');
-var Strategy = require('passport-local').Strategy;
 
-/* GET home page. */
-router.get('/', passport.authenticate('local', { failureRedirect: '/signin' }),
-  function (req, res, next) {
-    // for res.SendFile() specifying the root is required for an absolute path
-    // if the html or file needing to be served is in the same directory (i.e. routes for this)
-    // you can use (__dirname + 'file_name.html');
-    // also can use res.send() or render() for html
-    res.redirect('/studentDashboard')
-  });
-
-module.exports = router;
-/*var express = require('express'); 
+var express = require('express'); 
 var app = express();
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());             
@@ -67,7 +52,7 @@ app.get('/main', function(req,res){
 
 });
 
-//app.listen(3000);
+app.listen(3000);
 
 const PORT = process.env.PORT || 8080;
 
@@ -79,7 +64,7 @@ module.exports = app;
 
 
 
-*/
+
 
 
 
