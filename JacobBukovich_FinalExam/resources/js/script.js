@@ -1,7 +1,7 @@
 
 
 
-$(function () {
+$(window).load(function () {
     $("form[role='search']").submit(function (event) {
         event.preventDefault();
         var s = $("input[type='text']", this).val;
