@@ -2,12 +2,23 @@
     "name": "final",
     "main": "server.js",
     "scripts": {
-        "start": "node server.js"
+        "start": "node ./bin/www"
     },
+    "mssql.logDebugInfo": true,
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jake-bukovich/FinalProject.git"
     },
+    "mssql.connections": [
+        {
+            "authenticationType": "SqlLogin",
+            "server": "localhost",
+            "database": "uni_review",
+            "user": "jake-bukovich",
+            "password": "abc",
+            "savePassword": true
+        }
+    ],
     "dependencies": {
         "ejs": "^2.5.5",
         "ejs-lint": "^0.3.0",
